@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'Ownglyph_ParkDaHyun';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2411-3@1.0/Ownglyph_ParkDaHyun.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'LeeSeoyun';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+  font-family: 'LeeSeoyun';
+  font-size: 1.6vw;
+  text-align: center;
+}
+
+.wrap{
+  width: 80%;
+  height: 80%;
+  padding: 30px;
+  margin:0 auto;
+  background-color: aliceblue;
+}
+
+.title{
+  font-family: 'Ownglyph_ParkDaHyun';
+  font-size: 4vw;
+}
+
+.bookTable{
+  margin: 0 auto;
+}
+
+.main{
+  margin: 5px;
+  font-size: 2vw;
+}
+
+tr:nth-child(2n){
+  background-color:beige;
+}
+
+tr:nth-child(2n+1){
+  background-color:bisque;
+}
+
+th {
+  background-color:cadetblue;
+}
+th, td {
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: darkblue;
+}
+
+a:hover{
+  color:brown;
+}
+
+#bookId{
+  font-weight: bold;
+}
+
+ul{
+  list-style: none;
+}
+
+li {
+  margin:10px;
+}
+
+#bookDetailTitle{
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+.buttons{
+  background-color: azure;
+  padding: 10px;
+  margin-bottom: 20px;
+}
