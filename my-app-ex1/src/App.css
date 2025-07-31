@@ -1,0 +1,30 @@
+div {
+  height:100px;
+  text-align: center;
+}
+
+p {
+  font-weight: bold;
+  margin:0;
+  line-height: 100px;
+}
+
+#header {
+  background-color: blueviolet;
+}
+
+#header p {
+  color: white;
+}
+
+#nav {
+  background-color: aqua;
+}
+
+#content {
+  background-color: rgb(239, 239, 15);
+}
+
+#footer {
+  background-color: cadetblue;
+}
