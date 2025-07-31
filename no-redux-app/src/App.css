@@ -1,0 +1,12 @@
+.App,
+#container div {
+  border: solid 5px blue;
+  margin: 20px;
+  padding: 10px;
+}
+
+#container {
+  /* 1:1 비율로 구성 */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
