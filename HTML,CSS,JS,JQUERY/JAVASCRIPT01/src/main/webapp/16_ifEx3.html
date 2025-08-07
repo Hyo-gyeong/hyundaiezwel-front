@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>중첩 if문 연습문제</title>
+		<script type="text/javascript">	
+			var inputID = prompt("아이디 입력");
+			var inputPW = prompt("비밀번호 입력");
+			if (inputID == "abcd" && inputPW == "1234"){
+				alert(inputID+"님 반갑습니다");
+				var answer = prompt("대한민국의 수도는?");
+				if (answer == "서울"){
+					document.write("정답입니다");
+				} else {
+					document.write("틀렸습니다. 대한민국의 수도는 서울입니다.");
+				}
+			} else {
+				alert("아이디 또는 비밀번호가 일치하지 않습니다");
+				document.write("종료합니다");
+			}
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

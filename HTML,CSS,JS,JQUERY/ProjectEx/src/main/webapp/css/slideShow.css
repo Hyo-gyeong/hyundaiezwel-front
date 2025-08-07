@@ -1,0 +1,68 @@
+@charset "UTF-8";
+/* slideShow.css */
+
+#slideShow {
+	position:relative; /* 이 영역을 최상위 기준으로 두고 작업 */
+	background-color:#fff;
+	height:520px;
+	line-height:520px;
+	border-bottom:solid #CCC 1px;
+}
+
+#slideShowBox { /* 현재 보이는 이미지 영역 */
+	width:1280px;
+	height:480px;
+	text-align:center;
+	overflow:hidden; /* 영역 벗어나면 숨김 */
+}
+
+#slidePanel {
+	position:relative;
+	width:6400px;
+	height:480px;
+}
+
+/* 슬라이드 이미지 */
+.slideImage {
+	float:left;
+	width:1280px;
+	height:480px;
+}
+
+/* prev|next button */
+/* 이미지 영역 480px, 버튼 크기 78px -> 이미지 절반 240 - 이미지의 절반 39 = 201 */
+#prevNextButtonBox {
+	position:relative;
+	z-index:10;
+}
+
+#prevButton {
+	position:absolute; /* relative 부모영역을 기준으로 */
+	top:201px;
+	left:4%;
+	opacity:0.8;
+	cursor:pointer;
+}
+
+#nextButton {
+	position:absolute;
+	top:201px;
+	right:4%;
+	opacity:0.8;
+	cursor:pointer;
+}
+
+#prevButton:hover, #nextButton:hover {
+	opacity:1;
+}
+
+/* 컨트롤 버튼 */
+#controlPanel {
+	margin:0 auto;
+	width:160px;
+}
+
+#controlPanel img {
+	float:left;
+	margin:10px;
+}

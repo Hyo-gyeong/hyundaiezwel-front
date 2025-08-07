@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">	
+			// 배열 깊은 복사
+			// JSON객체 기능을 활용
+			// JSON.parse() -> 구문 분석
+			// JSON.stringify() -> JSON문자열로 변환
+				/* JSON.stringify() 함수는 JavaScript 객체를
+				 JSON(JavaScript Object Notation) 형식의 문자열로 변환하는데 사용 */
+			
+			// 배열 생성
+			var arr=[1,2,3];
+			var arrCopy = JSON.parse(JSON.stringify(arr));
+			//논리적인 코드 구문 [1,2,3] -> JSON 문자열 [1,2,3]으로 변환 -> 구문분석에 의해 [1,2,3]
+			// 인터프리터 해석 후 var arrCopy = [1,2,3]으로 변환됨
+			
+			console.log("원본 : ", arr);
+			console.log("복사본 : ", arrCopy);
+			
+			console.log(arr == arrCopy); // 동일한 참조주소를 가지고 있는지 확인
+			
+			console.log("변경 후");
+			arr[0] = 100; // 원본 변경하면 복사본 변경x
+			arrCopy[2] = 300; // 복사본 변경하면 원본 동일한 data 접근x
+			console.log("원본 : ", arr);
+			console.log("복사본 : ", arrCopy);
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

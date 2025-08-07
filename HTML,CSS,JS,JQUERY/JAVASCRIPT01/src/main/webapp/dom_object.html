@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM 주의</title>
+		<script type="text/javascript">	
+			/*
+			// script 코드가 요소가 생성되기도 전에 실행되버림
+			var box = document.getElementById('box'); // 태그의 id 속성값이 box인 태그를 찾아서 참조값 반환
+			box.innerHTML="변경"; // 현재 위치가 body태그도 생성되기 전 시점
+			*/
+		</script>
+	</head>
+	<body>
+		<div id="box">box</div>
+		<script type="text/javascript">	
+			var box = document.getElementById('box'); // 태그의 id 속성값이 box인 태그를 찾아서 참조값 반환
+			box.innerHTML="변경"; // id값이 box인 캐그가 생성된 이후이므로 반환된 참조값을 활용해서 태그요소 속성 변경 가능
+		</script>
+	</body>
+</html>

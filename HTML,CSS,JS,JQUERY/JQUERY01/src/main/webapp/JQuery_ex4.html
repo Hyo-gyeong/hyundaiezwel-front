@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="jquery-3.7.1.min.js"></script>
+		<style>
+			button {
+				width:100%;
+				background-color:#eee;
+				text-align:left;
+				border:0;
+				color:#444;
+				padding:15px;
+				font-size:20px;
+				cursor:pointer;
+			}
+			.section:hover{
+				background-color:#ccc
+			}
+			.content {
+				background-color:white;
+				color:black;
+				padding:10px;
+				display:none;
+				overflow:hidden;
+			}
+		</style>
+		<script type="text/javascript">	
+			$(document).ready(function(){
+				/*
+				$("#section1").on('click',function(){
+					$("#content1").slideToggle(500, 'linear');
+				});
+				$("#section2").on('click',function(){
+					$("#content2").slideToggle(500, 'linear');
+				});
+				$("#section3").on('click',function(){
+					$("#content3").slideToggle(500, 'linear');
+				});
+				*/
+				// [참고] js eq 연산
+				// $('#table1 tr:eq(5)').css('color','blue');
+				
+				var $sections = $(".section"); // 유사배열 형태로 반환됨
+				$sections.each(function(idx){
+					$(this).on('click', function(){
+						$(".content").eq(idx).slideToggle(500, 'linear');
+						// $(this).next().slideToggle(500, 'linear');
+					});					
+				});
+				
+				/*
+				$sections.on('click', function(idx){
+					$(this).next().slideToggle(500, 'linear');
+				});
+				*/
+				
+				/*
+				$sections.click(function(idx){
+					$(this).next().slideToggle(500, 'linear');
+				});
+				*/
+				
+				/*
+				$sections.click(function(idx){
+					$(this).next('.content').slideToggle(500, 'linear');
+				});
+				*/
+			});
+		</script>
+	</head>
+	<body>
+		<button class="section" id="section1">Section 1</button>
+		<div class="content" id="content1">
+				Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+				Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+				when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+		</div>
+		<button class="section" id="section2">Section 2</button>
+		<div class="content" id="content2">
+				It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+				The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
+				as opposed to using 'Content here, content here', making it look like readable English.
+		</div>
+		<button class="section" id="section3">Section 3</button>
+		<div class="content" id="content3">
+				There are many variations of passages of Lorem Ipsum available,
+				but the majority have suffered alteration in some form, by injected humour,
+				or randomised words which don't look even slightly believable.
+		</div>
+	</body>
+</html>

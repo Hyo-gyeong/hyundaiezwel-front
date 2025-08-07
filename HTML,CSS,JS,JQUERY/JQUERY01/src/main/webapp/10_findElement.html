@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>CSS 선택자를 이용해 원하는 노드 찾기</title>
+        <style type="text/css">        	
+			#menuBox div {
+				float:left;
+				background-color:green;
+				width:100px;	
+				height:50px;		
+			}		
+		</style>	
+		<script src="jquery-3.7.1.min.js"></script>
+		<script type="text/javascript"> 
+			$(document).ready(function(){ 
+				// div의 참조값 저장 집합
+				var $menuItem = $('.menuItem');
+				// alert($menuItem.length);
+				// 값을 줄력하기 위해 특정 요소의 참조값 반환 저장
+				var $indexSpan = $('#indexSpan');
+				
+				// $menuItem변수는 배열같은 집합형태임 - jquery는 each(func) 제공하고 있음
+				// jquery event 메소드 객체.이벤트명(func)
+				// 객체.hover : 객체 영역으로 마우스가 들어갔을 때 나왔을 떄의 두개 의미를 갖고 있음
+				// 두개의 함수 연결가능 함수,함수
+				$menuItem.each(function (index){ // $(selector).each(function(index, element) -> index, 요소 순서대로 받음
+					$(this).hover(
+							// 인자 의미가 정해져있음
+							//첫 번째 인자: mouseenter 이벤트 (== 마우스 in)
+							//두 번째 인자: mouseleave 이벤트 (== 마우스 out)
+						function(){ // 마우스가 해당 영역(this)으로 in
+							$(this).css('background','yellow');
+							$indexSpan.text(index);
+						},
+						function(){  // 마우스가 해당 영역(this)에서 out
+							$(this).css('background','green');
+							$indexSpan.text();
+						}
+					); // hover()종료
+				}); //each 종료
+				
+			}); //ready() 종료
+		</script>  
+    </head>
+    
+     <body>
+    	<div id="wrap">  
+			<h2>인덱스 : <span id="indexSpan">index</span></h2>
+			<div id="menuBox">
+			   <div class="menuItem"></div>
+			   <div class="menuItem"></div>
+			   <div class="menuItem"></div>
+			   <div class="menuItem"></div>     
+		    </div>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+

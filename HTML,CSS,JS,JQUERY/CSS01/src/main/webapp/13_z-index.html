@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+        <title>이미지 레이어</title>    
+        <style type="text/css"> 
+        #outBox{
+			margin:0 auto; /*가운데로 이동, body에 상관없이 적용됨
+							차지하는 영역이 여백이 있는 경우에 적용됨
+							+ img같은 inline(화면 내에서 동적으로 결정되기 때문에 계산이 힘듦)은 margin 0 auto안먹음 : auto를 브라우저가 계산하기 때문에*/
+        	width:1020px; /* + margin이 있어도 div는 가로 전체 영역을 차지하기 때문에
+        						width를 설정해주어야 margin 0 auto가 적용됨*/
+        	position:relative; /*absolute(절대적인것)면 px정의를 할 수 없으므로 margin 0 auto로 
+        						가운데 정렬이 안됨
+        						static인 경우 기준이 div내의 다른 객체들이 문제가 될 수 있으므로
+        						margin 0 atuo가 적용은 되지만 예상하지 못하는 문제 발생
+        						특정 공간안에 반드시 들어가야 하는 객체는 position을 
+        						부모는 relative, 자식은 absolute로 세팅하는게 좋음*/
+        }
+        #box1{
+            position:absolute; /*px 반드시 지정해야함*/
+            left:25px;
+            top:181px;
+			z-index:1;
+
+        }
+        #box2{
+            position:absolute;
+            left:187px;
+            top:155px;
+			z-index:2;
+        }
+       #box3{
+            position:absolute;
+            left:369px;
+            top:129px;
+			z-index:5;
+        }
+        #box4{
+            position:absolute;
+            left:603px;
+            top:155px;
+			z-index:4;
+        }
+        #box5{
+            position:absolute;
+            left:795px;
+            top:181px;
+			z-index:1;
+        }
+		</style>      
+    </head>
+    
+   <body>
+   	<div id="outBox">
+        <div id="box1"><img src="image/img1.png"></div>
+        <div id="box2"><img src="image/img2.png"></div>
+        <div id="box3"><img src="image/img3.png"></div>
+        <div id="box4"><img src="image/img4.png"></div>
+        <div id="box5"><img src="image/img5.png"></div>
+  	 </div>
+	</body>
+</html>
+

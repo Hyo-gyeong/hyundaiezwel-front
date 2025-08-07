@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+/* body h1 { color:blue; } */
+/* body div { color:red; }/* 위에 h1에 직접 적용된 스타일이 있으므로 이것이 우선순위를 갖기 때문에
+					부모한테 적용된 red style은 h1에 적용되지 않음*/
+
+/* #header h1 { color:yellow;} */
+/* #header h2 { color:blue;} */
+
+#section h1 {color:black;}
+#header h1, #header h2 {color:pink;} /* 자식 태그도 나열 가능한데 ,를 기준으로 태그를 다시 찾기 때문에
+							#header h1을 찾고 그냥 h2를 찾는게 됨 (#header h2가 아니라)
+							그래서 blue로 변하지 않게됨. 따라서 경로를 다시 써줘야함*/
+</style>
+</head>
+<body>
+	<div id="header">
+		<h1 class="title">header - h1 제목</h1>
+		<div id="nav">
+			<h1>header-nav-h1제목</h1>
+			<h2>header-nav-h2제목</h2>
+		</div>
+	</div>
+
+	<div id="section">
+		<h2 class="title">section-h2 제목</h2>
+	</div>
+</body>
+</html>

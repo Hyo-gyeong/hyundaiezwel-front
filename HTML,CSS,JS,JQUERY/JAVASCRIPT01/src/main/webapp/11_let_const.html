@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>let과 const</title>
+		<script type="text/javascript">
+			//let의 특징 (var과 다른 점)
+			var name = "홍길동";
+			console.log(name);
+			var name = "김철수"; // 동일한 변수명으로 한번 더 생성 가능 - 오류 없음
+			console.log(name);
+			////////////////// let 활용 선언
+			let name = "홍길동"; // let은 동일 변수명으로 선언 불가능, var로 선언해놓은 변수도 let으로 선언하면 오류
+			console.log(name);
+			let name = "김철수";
+			console.log(name);
+			////////////////// const 선언 : 상수 선언 -> 상수는 생성된 이후로 값 변경 저장이 불가
+			const address = "seoul"; // 상수 선언 값 저장
+			console.log(address);
+			
+			address = "Jeju" //address상수이므로 변경 대입 불가능 - 오류발생
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+

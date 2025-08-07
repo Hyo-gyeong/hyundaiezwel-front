@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>이벤트 처리 : 고전 방식</title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var btn = document.getElementById("btn");
+				
+				// btn에 onclick이벤트가 발생했을 떄 function 수행
+				btn.onclick = function() {
+					alert("클릭했습니다");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<button id="btn">클릭</button>
+	</body>
+</html>

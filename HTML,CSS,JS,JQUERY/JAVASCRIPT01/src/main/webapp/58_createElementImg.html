@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <title>createElement('img') 예제</title>
+        <script type="text/javascript">
+			window.onload = function() {
+				//1단계: 요소 노드 생성
+				// 요소 노드(<img> 태그) 생성하고 변수에 지정 
+					// document.createElement : body안에 들어가는 모든 태그를 생성
+				var img = document.createElement("img"); // <img>만 만든 상태, 브라우저가 img 태그 객체를 인식함
+				//속성 설정
+				img.src = 'image/bird.jpg';
+				img.width = 250;
+				img.height = 180;
+				img.title = "예쁜 새";
+				
+				//2단계 : 문서에 출력
+				document.body.appendChild(img);
+				// img에 가면 객체가 있고 속성도 적용되어져 있으므로 이를 body의 자식태그로 추가
+				
+				// 브라우저의 해석에 의해 태그 생성
+				// 브라우저가 동적으로 만들든 정적으로 만들든 객체 트리에 넣긴함 (관리 차원)
+        	};
+		</script>
+	</head>
+	
+	<body>
+	</body>
+</html>

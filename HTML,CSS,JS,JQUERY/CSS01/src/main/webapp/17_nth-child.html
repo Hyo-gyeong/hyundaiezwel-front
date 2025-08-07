@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>테이블에서 짝수 행 선택 </title>
+	<style type="text/css">		
+        #stdTable{
+            margin:0 auto;
+            border-collapse:collapse;/*단일 경계선*/
+        }
+        #stdTable th {
+            color:white;
+            background-color:blue;
+        }
+
+        #stdTable th.name{width:100px;}
+        #stdTable th.email{width:200px;}
+
+        #stdTable td {height:20px}
+
+		#stdTable tr:nth-child(2n) { background:yellow; } /* n에는 1부터 들어가서 2*이 되어 2,4,6..으로 선택함 
+																3n도 되고 2n+1이것도 됨*/
+
+    </style>
+</head>
+
+<body>
+    <table id="stdTable" border="1">
+        <tr> <th class="name">이름</th>
+                 <th class="email">이메일</th></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>        
+    </table>
+</body>
+</html>
+

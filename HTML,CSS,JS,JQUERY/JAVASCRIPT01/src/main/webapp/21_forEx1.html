@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>양수,음수,0</title>
+		<script type="text/javascript">	
+			var cntPos = 0;
+			var cntNeg = 0;
+			var cntZero = 0;
+			for (var i = 1; i <= 10; i++){
+				var input = prompt("숫자"+i+" 입력:");
+				if (input == 0){
+					cntZero++;
+				}else if (input > 0){
+					cntPos++;
+				}else {
+					cntNeg++;
+				}
+			}
+			document.write("양수의 개수 : " + cntPos + "<br>"+
+							"음수의 개수 : " + cntNeg + "<br>"+
+							"0의 개수 : " + cntZero+ "<br>");
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+        <title>함수 예제2</title>  
+        <script type="text/javascript">			
+			// 함수 블럭에서 함수를 호출 - 함수 호출은 함수 생성 후 어디서든 사용 가능
+			// 일반 함수 1
+			function changeColor() {
+				var color = prompt("색상입력 : red/green/blue");
+				document.write(color+"로 배경색을 바꿉니다");
+				
+				//document는 body태그를 참고하는 객체이므로 write라는 함수도 있고 bgColor라는 속성도 있음
+				// bgColor : body태그의 배경색 속성을 설정하거나 현재 설정된값을 갖고올 때 사용
+				document.bgColor = color;
+			}
+			// 일반 함수 2 : 배경색 변경 여부 묻고 확인버튼을 클릭하면 (true) 배경색 변경 담당 함수 호출
+			// 함수호출시 전달되는 값(인수)이 없고 함수 종료시 반환되는 값이 없는 함수
+			function start() {
+				var answer = confirm("배경색을 변경하시겠습니까?");
+				if (answer) {
+					changeColor();
+				}else {
+					alert("취소하였습니다.");
+				}
+			}
+			// 호출 코드
+			start();
+        </script>
+    </head>
+
+    <body> 
+    </body>
+</html>
+
+

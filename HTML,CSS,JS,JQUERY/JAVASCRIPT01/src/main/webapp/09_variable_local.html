@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>지역변수</title>
+		<script type="text/javascript">
+			function f1() {
+				var localVar1 = 100; //f1함수 내에서만 사용되는 지역변수
+							// 왼쪽 코드가 실행되면 생성되고 함수 영역 끝 }를 만나면 변수가 삭제됨
+			}
+			f1(); // 호출 해야 localVar1이 생성됨
+			document.write(localVar1 + "<br>"); // 지역변수라서 출력이 안되는게 아니고 변수가 삭제되어서 출력이 안되는 것
+			
+			function f2() {
+				localVar2 = 100; // 명시적 선언 없이 변수명으로만 변수 생성 -> 전역변수
+			}
+			f2();
+			document.write(localVar2 + "<br>");
+
+			function f3() {
+				var localVar3 = 100; // 변수 명에 localVar1을 사용해도 위에서 삭제되기 때문에 문제 없음
+									// let을 활용 명시적 선언진행 지역변수로 생성됨
+			}
+			f3();
+			document.write(localVar3 + "<br>"); // 지역변수이기때문에 참조에러 발생
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

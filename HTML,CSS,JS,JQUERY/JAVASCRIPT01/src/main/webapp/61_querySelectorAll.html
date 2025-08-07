@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>querySelectorAll()</title>
+		<script type="text/javascript">
+			window.onload = function(){
+				// 인수로 전달된 조건에 맞는 태그를 모두 반환
+				// 여러개의 객체가 넘어옴 -> 배열 형태로 반환
+				var header = document.querySelectorAll('h1'); // 문서내의 첫번째 h1태그의 참조값 반환
+				
+				// 문서 객체 속성 변경
+				// 객체 참조 변수 한개에서는 사용 불가능
+				for (var i = 0; i < header.length; i++){
+					header_item = header[i];
+					header_item.style.color = 'orange';
+					header_item.style.background = 'red';
+					header_item.style.width = "50%";
+					header_item.innerHTML = "from JavaScript";
+				}
+				/*
+				header.forEach (h1 => {
+					h1.style.color = 'orange';
+					h1.style.background = 'red';
+					h1.innerHTML = "from JavaScript";
+				})
+				*/
+			};
+		</script>
+	</head>
+	<body>
+		<h1>Header</h1>
+		<h1>Header</h1>
+		<h1>Header</h1>
+	</body>
+</html>

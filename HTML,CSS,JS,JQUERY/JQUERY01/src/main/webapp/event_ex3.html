@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>동적 객체 이벤트 연결</title>
+		<style>
+			div {
+				width:100px;
+				height:50px;
+				line-height:50px;
+				text-align:center;
+				color:white;
+				background-color:teal;
+				border-radius:20px;
+			} 
+		</style>
+		<script src="jquery-3.7.1.min.js"></script>
+		<script type="text/javascript">			
+			$(document).ready(function(){ // dom 객체가 전부 다 올라오면 실행할 함수
+				$('div').on('click', function(){ // div 태그를 눌렀을 떄 실행할 함수
+					console.log(this); // 결과 : <div>버튼</div>
+					// 현재 객체 (div) 다음에 버튼 2개 추가
+					$(this).after("<p><input type='button' id='newBtn1' value='새버튼1'></p>" +
+					 			 "<p><input type='button' id='newBtn2' value='새버튼2'></p>");
+					
+					// 이벤트 동적 연결
+					// document 객체에서 id가 newBtn1인 객체를 찾고 mouseenter했을 때 실행할 함수 정의
+					$(document).on('mouseenter', '#newBtn1', function(){
+						// 코드 해석을 먼저 하고 이벤트 발생 시 콘솔이 뜨니까 this를 출력하면 css가 반영된채로 출력됨
+						// 콘솔은 "로그 찍는 시점의 상태"가 아니라, 객체를 참조해서 "나중에 보는 시점의 상태"를 보여주기 때문
+						console.log(this);
+						// 현재 객체의 배경 색 변경
+						// .css 인자 개수에 따라
+							// 1개 - getter : 값을 가져와라 ex) let bg = $('#box').css('background-color');
+															// console.log(bg); // 예: "rgb(255, 255, 0)"
+
+							// 2개 - setter : 값을 설정해라 ex ) $('#myDiv').css('color', 'red');
+						$(this).css({
+							'backgroundColor':'green'
+						})
+					});
+					
+					// document 객체에서 id가 newBtn1인 객체를 찾고 mouseleave했을 떄 실행할 함수 정의
+					$(document).on('mouseleave', '#newBtn1', function(){
+						console.log(this);
+						// 현재 객체의 배경 색 변경
+						$(this).css({
+							'backgroundColor':'yellow'
+						})
+					});
+					
+					// document 객체에서 id가 newBtn2인 객체를 찾고 click을 했을 때 실행할 함수
+					$(document).on('click', '#newBtn2', function(){
+						// 해당 주소의 윈도우 새로 띄움
+						window.open('https://www.naver.com/', "naver", "width=699, height8600");
+					});
+				});
+			});
+		</script>			
+	</head>
+	<body>
+		<div>버튼</div>
+	</body>
+</html>

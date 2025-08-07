@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <title>공지사항 창</title>
+		<script type="text/javascript">
+			function winClose(){ // 함수를 형재창이 열린시점부터 3초후에 실행 - setTimeout() 사용
+				window.close(); // 현재 창 닫기
+				opener.focus(); // opener: 현재 창을 연 부모창에 포커스 넘기기 (명시적)
+			}
+		</script>
+	</head>		
+	<!--  setTImeout은 정해진 시간 후에 전달된 코드를 한 번 실행 -->
+	<body onLoad="setTimeout('winClose()', 3000)">
+	<!--  winClose()를 문자열에 감싸는 이유는 함수를 부르는 명령어를 줘야하는것이지 함수를 대신 불러주는 것이 아니기 때문에 호출 코드로 전달하는 것.
+	: 3초 후에 해당 코드를 실행하게됨 -->
+    	공지 사항<br>
+         이 창은 3초 후에 자동으로 닫힙니다.    	
+	</body>
+</html>
+

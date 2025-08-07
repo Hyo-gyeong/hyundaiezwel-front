@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.container {
+		width:500px;
+		height:150px;
+		background:yellow;
+		display:flex; /* item div가 내용에 맞춰서 width가 결정됨 */
+	}
+	.item {
+		height:50px;
+		background:green;
+		border:solid 1px black;
+	}
+	
+	/*------------------------------
+	flex 관련한 추가 속성
+	: container 영역을 벗어나는 flex item 처리방식 -> 기준container이므로 container에 설정
+	flex-wrap:nowrap(벗어나도 그대로 두겠다)|wrap(아래로 밀림)|wrap-reverse(위로 밀려 올라감) */
+	.container {
+		flex-wrap:nowrap;
+	}
+	/* item이 가질 수 있는 속성 (flex item에 적용되는 속성)
+		flex-basis:flex 아이템의 기본 크기를 설정
+		값으로 width, height등에 사용하는 각종 단위 사용 가능
+		속성 값으로 특정 단위 사용 수치 표현 가능, auto 사용 가능 
+		auto : 해당 아이템의 width 값을 사용, width 따로 설정하지 않으면 컨텐츠 크기(글자수 등)가
+		아이템의 기본 크기로 설정됨 */
+		
+	.item {
+		/* flex-basis:auto; /* item에 대한 width, height가 설정되어있지 않으니까
+								기본값으로 설정함(컨텐츠가 가진 크기) 
+								content에 설정된 width가 있으면 그만큼 표현*/
+		/* flex-basis:100px; /* width를 주는 것과 동일한 효과, 차이점은 width보다 모자란 길이는 늘리지만
+							width를 넘어가는 contents일 때 넘어가는 크기를 줄이지 않음 */
+		/* width:100px; /* 이건 걍 고정 */
+	
+	/*  flex-grow: 숫자값이 들어감. 크기 상관 없이 0보다 큰값이 세팅되면 해당 아이템이
+					 flexible로 변하고 원래 크기보다 커지고 부모박스의 빈 공간을 전부 메우게됨 */
+
+		/* flex-grow:1; /* 자신의 크기는 가지면서 여백을 균등하게 나눠가짐 */
+		
+	}	
+	/* 남은 여백을 비율적으로 1,2,1인분씩 가져가라 */
+	.item:nth-child(1) { flex-grow:1; }		
+	.item:nth-child(2) { flex-grow:2; }	
+	.item:nth-child(3) { flex-grow:1; }	
+		 
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="item">helloflexhelloflexhelloflexhelloflexhelloflex</div>
+		<div class="item">abc</div>
+		<div class="item">helloflex</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>동적 선택자</title>
+	<style type="text/css">
+		.content div {
+			width:100px;
+			height:50px;
+			background:blue;
+			/*display:inline; /* div내부의 컨텐츠 만큼의 공간을 차지하는데
+								아무것도 없어서 div사라짐
+								width, height도 적용 안됨*/
+			display:inline-block;
+		}
+		.content div:hover{
+			background:yellow;
+		}
+		.content div:active{
+			background:red;
+		}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<div></div><div></div><div></div><div></div>
+	</div>
+</body>
+</html>
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <title>랜덤함수 사용</title>       
+        <script type="text/javascript">		
+			// 랜덤값(난수) 발생 예시
+			for(var i=1; i<=10; i++){
+				var num = Math.random(); // 0.0x~ 0.9x
+				document.write(num + "<br>");
+			}
+			
+			document.write("<hr>");
+			
+			// 랜덤값(난수) 발생 예시
+			for(var i=1; i<=10; i++){
+				var num = Math.random()*10; // 0~9 난수 얻고 싶을 때
+				document.write(num + "<br>");
+			}
+			
+			document.write("<hr>");
+			
+			// 랜덤값(난수) 발생 예시
+			for(var i=1; i<=10; i++){
+				var num = Math.floor(Math.random()*10); // 정수만 선택할 때
+										// floor 버림함수 사용
+										// 1-10까지 원하면 +1해주기
+				document.write(num + "<br>");
+			}
+        </script>     
+    </head>
+    
+    <body>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>42_function_callback_async.html</title>
+		<script type="text/javascript">	
+			// 비동기 진행하는 자바스크립트 함수 활용 비동기방식으로 콜백함수 사용 예제
+			
+			var callback = function() {
+				console.log("콜백함수 호출됨");
+			}
+						
+			console.log('콜백함수 호출 전');
+			setTimeout(callback, 3000); // 3초후에 전달받은 callback함수를 실행시켜줌 - 함수 종료전에 아래 코드들이 실행가능하면 실행하게 됨
+				// setTimeout함수는 이후 나오는 함수를 자신의 종료여부와 관계없이 실행하도록 만들어진 비동기 함수
+				// setTimeout 함수 호출하면서 callback 익명함수를 인수로 전달
+				// setTimeout함수는 함수를 콜백으로 전달 받아서 지정된 시간 이후에(타임아웃이 끝나면) 함수를 실행시켜줌
+			console.log('콜백함수 호출 후');
+			
+			// 콜백함수를 사용할 때 콜백함수 전달된 함수 내에서 또 콜백 함수 전달이 반복되면 콜백지옥에 빠질 수 있음
+			// 코드 가독성이 떨어지면 수정하기 어려울 수 있음 -> async/await기능을 주로 사용하기도 함 (비동기 처리를 조금 더 간단하게 하기 위해서)
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS:float/clear 속성</title>
+<style>
+	#menu {list-style:none;} /* 목록 태그 점 삭제 */
+	#menu li {
+		/* float:left; /* li에만 floating 적용 했지만 영향이 확장되어 p태그도 li태그 옆으로 따라올라옴*/
+		/* float:right; /* 여전히 floating에 영향을 받고 오른쪽에 공간이 없어서 맨 위쪽 왼쪽에 붙어버림*/
+		float:left;
+	}
+	#p1 {
+		clear:left; /*나를 만나면 float 속성을 삭제하라는 뜻*/
+	}
+</style>
+</head>
+<body>
+<div>
+	<ul id="menu">
+		<li>메뉴1</li> <!-- 기본적으로 block속성 상태 -->
+		<li>메뉴2</li>
+		<li>메뉴3</li>
+	</ul>
+	<p id="p1">메뉴 아래에 위치하는 내용</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>overflow</title>
+	<style type="text/css">	
+	div {
+		width:200px;
+		height:175px;
+		border:solid 1px black;
+		overflow:hidden; /* 부모 영역을 벗어나는 개체는 숨김 */
+		overflow:scroll; /* 가로, 세로 벗어나지 않아도 가로,세로 스크롤바 전부 다 만듦 */
+		overflow:auto; /* 필요한 스크롤바만 생성 */
+	}
+	
+	</style>
+</head>
+<body>
+	<div>
+		<img src="image/fashion1.png">
+	    <img src="image/fashion2.png">
+	    <img src="image/fashion3.png">
+	</div>
+</body>
+</html>
+

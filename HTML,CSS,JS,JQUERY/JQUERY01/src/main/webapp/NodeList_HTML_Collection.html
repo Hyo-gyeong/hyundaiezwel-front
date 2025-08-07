@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">	
+			window.onload = function(){
+				// querySelectorAll() - 배열과 비슷한 형태로 반환이 됨
+									// - 브라우저 자체 객체인 NodeList(정적객체)로 처리함
+									// 자바스크립트 객체처럼 사용 가능 -> NodeList에 foreach로 처리하는 유사코드를 정의해왔기 때문
+				// for, forEach 사용 가능
+				var header = document.querySelectorAll('h1');
+				
+				console.log(Object.prototype.toString.call(header));
+				
+				/*
+				for (var i = 0; i < header.length; i++){
+					header[i].style.color="red";
+				}
+				*/
+				
+				header.forEach(item => {
+					item.style.color="red";
+				});
+				
+				////////////////////////////
+				
+				// 유사배열이기는 하지만 HTMLCollection(동적객체)으로 처리
+				// 이 안에는 foreach로 순회하여 처리하는 기능이 없음
+				var header_h2 = document.getElementsByTagName('h2');
+				
+				// 객체의 정확한 타입을 반환
+				console.log(Object.prototype.toString.call(header_h2));
+				
+				// forEach 사용 불가능
+				/*
+				for (var i = 0; i < header_h2.length; i++){
+					header_h2[i].style.color="red";
+				}
+				*/
+				
+				// 배열 기능 사용하려면 -> 배열로 변환 Array.from(객체)
+				var h2Arr = Array.from(header_h2);
+				console.log(Object.prototype.toString.call(h2Arr));
+			
+				h2Arr.forEach(item => {
+					item.style.color="red";
+				});
+				
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Header</h1>
+		<h1>Header</h1>
+		<h1>Header</h1>
+		<h2>Header</h2>
+		<h2>Header</h2>
+		<h2>Header</h2>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iframe</title>
+    <style>
+        #bigBox { margin:0 auto; width:1024px; }
+		#box2 {position: absolute; margin-left:250px; top:270px;}
+		iframe {width:580px; height:480px; border:none;}
+	</style>
+</head>
+<body>
+   <div id="bigBox">
+       <div id="box1"> <!-- name:서버 전송용, id: 태그를 지칭하기 위한 고유 이름 -->
+			<img src="image/메인.png" border="1" usemap="#cityMap"> <!-- map이름 지정 -->
+			<map name="cityMap">
+				<!-- area에 target이 없으면 브라우저에서 새로운 html로 이동, 있으면 iframe자리에 html이 뜸 -->
+				<area shape="rect" coords="60,90,250,150" href="뉴욕.html" target="iFrameArea">
+				<area shape="rect" coords="310,90,500,150" href="파리.html" target="iFrameArea">
+				<area shape="rect" coords="560,90,750,150" href="로마.html" target="iFrameArea">
+				<area shape="rect" coords="810,90,1000,150" href="베이징.html" target="iFrameArea">			
+			</map>
+       </div>
+       <div id="box2">
+       		<!-- 불러올 html이 들어갈 자리 -->
+			<iframe name="iFrameArea"></iframe>
+       </div>
+   </div>
+</body>
+</html>
+
+

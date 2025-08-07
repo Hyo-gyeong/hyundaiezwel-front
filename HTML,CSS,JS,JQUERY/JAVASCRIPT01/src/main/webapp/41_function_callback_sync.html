@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>41_function_callback_sync.html</title>
+		<script type="text/javascript">	
+		// 동기적 실행
+		var callback = function(){
+			console.log("콜백함수 호출됨");
+		}
+		
+		function show(callback){
+			callback(); //콜백함수 호출하는 코드 직접 작성
+		}
+		
+		console.log('콜백함수 호출 전');
+		show(callback); // show 함수 호출하면서 callback 익명함수를 인수로 전달
+		console.log('콜백함수 호출 후');
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

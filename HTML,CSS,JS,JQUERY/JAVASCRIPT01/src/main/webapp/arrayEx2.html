@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>arrayEx2</title>
+		<style>
+			td {
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+		</style>
+		<script type="text/javascript">	
+			var names = new Array(4);
+			for (var i = 0; i < names.length; i++){
+				names[i] = prompt("학생"+(i+1)+" 입력");
+			}
+			document.write("<table border='1'>");
+			for (var i = 0; i < names.length; i++){
+				document.write("<tr><td>"+(i+1)+"</td><td>"+names[i]+"</td></tr>");
+			}
+			document.write("</table>");
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

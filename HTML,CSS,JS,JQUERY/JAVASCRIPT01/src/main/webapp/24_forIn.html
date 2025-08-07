@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <title>for in 예제</title>
+        <script type="text/javascript">    		    
+			 var fruits = ["사과", "포도", "복숭아"];	//배열 선언 및 초기화		
+			 
+			 for(var i in fruits){ // index접근, i => 0~ index
+				 document.write("fruits["+i+"]="+fruits[i]+"<br>");
+			 }
+
+			 // 객체 변수인 배열의 기능 forEach() 사용 예제
+			 var arr = ["사과","배","포도","복숭아"];
+			 arr.forEach(function(item, index, fruit){
+				 // 각 위치의 인수는 값이 정해져 있기 때문에 이름은 아무거나 상관없음
+				 document.write(item, index, fruit, "<br>");
+			 });
+        </script>        
+    </head>   
+    <body>   	  
+    </body>
+</html>
+	

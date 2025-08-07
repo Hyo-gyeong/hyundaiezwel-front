@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>성적입력</title>
+		<script type="text/javascript">	
+			function start(){
+				let ans = confirm("성적을 입력하시겠습니까?");
+				if (ans == true){
+					document.write("평균 성적 : " + input());
+				}else {
+					alert("종료합니다.");
+				}
+			}
+			function input(){
+				let kor = parseInt(prompt("국어 성적을 입력하세요."));
+				let eng = parseInt(prompt("영어 성적을 입력하세요."));
+				let math = parseInt(prompt("수학 성적을 입력하세요."));
+				
+				return (kor+eng+math)/3;
+			}
+		</script>
+	</head>
+	<body>
+		<button onClick="start()">성적 입력</button>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>전역변수</title>
+		<script type="text/javascript">
+			var x = 5, y = 10; // var활용 명시적 변수 선언 및 생성
+								// 멤버변수(전역변수)로 생성
+			function f1() {
+				x = y;
+				document.write(x + "<br>");
+			}
+		
+			function f2() {
+				total = x + y; //total 변수 생성함
+								// 명시적으로 선언하지 않았으므로 전역변수
+				document.write(total + "<br>");
+			}
+			
+			// 함수 사용 : 함수 호출 -> 함수 내부에서 출력
+			f1();
+			f2();
+			
+			// 함수 외부에서 출력
+			document.write(x  + "<br>");
+			document.write(total  + "<br>"); 
+			
+			total = '테스트';
+			document.write(total + "<br>");
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

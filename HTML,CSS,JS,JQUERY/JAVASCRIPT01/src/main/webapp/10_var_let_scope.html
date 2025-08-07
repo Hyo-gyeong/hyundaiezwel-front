@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>var와 let : scope 차이</title>
+		<script type="text/javascript">
+			function test() {
+				var x = 10; 
+				if(x==10){
+					var a = 100;// '함수의' 중괄호가 기준이므로 아래 console이 찍힘
+				}
+				console.log(a);
+				
+			}
+			
+			test();
+			
+			function test2() {
+				let x = 10;
+				if(x==10){
+					var a = 400;
+				}
+				console.log(a); // let의 범위가 {}안
+				
+			}
+			
+			test2();
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

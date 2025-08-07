@@ -1,0 +1,108 @@
+@charset "UTF-8";
+/* 전체 컨텐츠를 담고 있는 div태그 */
+#wrap {
+	margin:0 auto; /* 가운데 정렬 */
+	width:800px; /* 여백이 생겨서 가운데 정렬 가능하도록 가로 길이 조절 */
+	text-align:center; /* 내부 요소 가운데 정렬 */
+}
+
+#mainMenuBox {
+	height:35px;
+	line-height:35px; /* 줄간격 - 수직 가운데 정렬 효과 */
+	background-color:#333;
+	margin-top:30px;
+	margin-bottom:30px;
+}
+
+#mainMenuBox ul {
+	padding-left:0;
+	margin:0;
+	list-style:none; /* 목록 기호 없이 */
+	
+	/* flex로 변경한 부분 */
+	display:flex; /* li의 부모를 flex로 변경 */
+}
+
+#mainMenuBox li {
+	/* float:left; /* display 변경할 필요 없어짐 */
+	/* width:25%; /* 아직 block 속성을 가지고 있기 때문에 넓이 설정 가능 */
+	text-align:center;
+	
+	/* flex로 변경한 부분 */
+	flex-grow:1; /* width 직접 설정 할 필요 없이 여백 균등하게 나눠서 가짐 */
+	border:solid 1px red;
+}
+
+#mainMenuBox a {
+	/* 기본적으로 가지고 있는 스타일을 없앰 */
+	text-decoration:none; /* 밑줄 없애기 */
+	color:white;
+	display:block; /* a태그는 inline속성이 기본, block으로 바꾸면 마우스 반응 영역이
+						상위 태그에 준해서 확장됨 */
+	font-weight:bold;
+}
+
+#mainMenuBox a:hover { /* 각 메뉴 항목에 마우스 올렸을 때 */
+	color:red;
+	text-decoration:underline;
+	background-color:black; /* 위에서 display를 block으로 바꿔서
+								a영역이 확장되었기 때문에 이 스타일 영역에도 적용됨 */
+}
+
+#productBox {
+	margin-bottom:30px;
+}
+
+#productBox div {
+	display:inline-block;
+	margin:20px;
+}
+
+#productBox a {
+	text-decoration:none;
+}
+
+#productBox div > h3.prdTitle {
+	margin-bottom:5px;
+	color:blue;
+	font-weight:bold;
+}
+
+#productBox div > p.prdPrice {
+	color:#ff7800;
+	font-weight:bold;
+}
+
+#infoBox div.box {
+	display:inline-block;
+	border:1px solid #9e9e9e;
+	width:42%; /* div 각각 42% 차지하고 나머지는 여백 */
+	border-radius:10px;
+	margin:10px;
+	padding:5px;
+	text-align:left;
+}
+
+/*--------------------------------------------------*/
+#productBox img:hover {
+	opacity:0.5;
+}
+/* css 가상 클래스 */
+/* 
+active : 마우스 클릭
+hover : 마우스 올렸을 때
+link : 방문하지 않은 링크
+visited : 방문된 링크
+-> 위 클래스는 적용 우선순위가 있으므로 순서를 주의
+link - visited - hover - active 순서로 정의해야함
+*/
+
+/* active를 위에서 정의하고 visited를 밑에서 정의하면 충돌나서 둘 다 적용 안됨 */
+#infoBox a:visited { 
+	color:red;
+}
+
+#infoBox a:active {
+	color:purple;
+}
+

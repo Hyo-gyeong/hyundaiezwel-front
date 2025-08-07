@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>함수 매개변수</title>
+		<script type="text/javascript">    
+
+			// 두 값(예금액과 미자율)을 입력받아서 이자를 계싼해주는 calInterest 함수 호출해서
+			// 계산된 이자를 반환 받은 후 출력
+			function input() {
+				var deposit = parseInt(prompt("예금액 입력"));
+				var rate = Number(prompt("이자율 입력"))
+				document.write("예금이자 : "+calcInterest(deposit,  rate));
+			}		
+			
+			function calcInterest(deposit,  rate){ // 매개변수 지역변수
+				var interest = deposit*rate/100; // 이자율이므로 퍼센트로 전달
+				return interest;
+			}
+        </script>    
+	</head>
+	<body onLoad="input()"> <!-- body코드가 올라오면 바로 input함수 호출 -->
+	
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <title>getElementById() 예제2</title>
+	<style>
+		#wrap {margin:0 auto; width:70%; text-align:center;}
+	</style>
+        <script type="text/javascript">	
+       		// window.onload 내부에서 var 키워드를 사용하여 선언된 변수는 전역 변수가 되며, 어디서든 접근 가능합니다.
+       		// let이나 const를 사용하면 해당 window.onload 함수 내부에서만 유효한 지역 변수가 됩니다
+			// 일반적으로 window.onload function 안에서 변수를 선언해서 쓰지는 않음.
+			// 전역 변수처럼 사용을 가능하나 추천하는 방식은 아님
+			
+			
+       		//실행 시 해당 id의 요소 반환
+			// 미리 찾아놨다가
+			window.onload = function() {
+				var imageA = document.getElementById("imageA")
+				var hint = document.getElementById("hint");
+				var changeButton = document.getElementById("changeButton");
+			};
+			
+			//요소의 속성 변환	
+			// 속성만 변경할 수 있도록 코딩
+			function change(){ 		
+				imageA.src = "image/B.png";
+				hint.innerHTML = "새로운 이미지로 변경되었습니다";
+				hint.style.background = "red";
+				changeButton.innerHTML = "완료"
+           	}    		
+		</script>
+	</head>	
+	<body>    	
+        <div id="wrap">	
+            <img id="imageA" src="image/A.png">
+            <div id="hint">[변경] 버튼을 누르면 이미지가 바뀝니다.</div><p>
+            <button id="changeButton" onClick="change()">변경</button>
+        </div>
+	</body>
+</html>
+
+

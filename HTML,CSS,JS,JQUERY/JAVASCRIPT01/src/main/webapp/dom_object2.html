@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM 주의</title>
+		<script type="text/javascript">	
+			// script 코드가 html 태그가 전부 생성된 후에 실행되도록 코드 구성
+			// window는 브라우저 창 표현 객체는 load 이벤트를 발생시킴 -> 태그 해석 완료 후 창을 생성하고 표현할 때 발생
+			window.onload = function() {
+				// 태그 해석이 끝나고 창이 load될 때 익명함수가 자동 호출되면서 실행
+				var box = document.getElementById('box'); // 태그의 id 속성값이 box인 태그를 찾아서 참조값 반환
+				box.innerHTML="변경"; // 현재 위치가 body태그도 생성되기 전 시점
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">box</div>
+	</body>
+</html>

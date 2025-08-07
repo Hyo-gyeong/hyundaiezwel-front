@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>형변환</title>
+		<script type="text/javascript">	
+			
+			//var num1 = prompt("숫자1 입력");
+			//var num2 = prompt("숫자2 입력");
+		
+			// 실수 입력도 받고싶을 때 
+			//var num1 = Number(prompt("숫자1 입력"));
+			//var num2 = Number(prompt("숫자2 입력"));
+			
+			var num1 = parseInt(prompt("숫자1 입력")); // 실수를 입력하면 소수점 이하는 버림
+			var num2 = parseInt(prompt("숫자2 입력"));
+			
+			document.write(num1 + num2 +"<br>"); // 이건 이어져서 출력됨, "<br>" 없어도 그냥 이어서 출력
+			document.write(num1 * num2 ); // *연산에 대해 브라우저가 자동으로 정수로 형변환함
+										// 숫자형태의 문자이기 때문에
+		</script>
+	</head>
+	<body>	
+	</body>
+</html>

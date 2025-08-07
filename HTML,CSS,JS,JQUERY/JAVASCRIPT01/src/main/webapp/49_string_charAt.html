@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>charAt()</title>
+		<script type="text/javascript">
+			// String.charAt(인덱스) -> 인덱스 위치의 문자를 반환
+			// 입력 
+			let num = prompt("숫자 입력"); //num에는 문자열 저장됨
+			
+			// 입력된 값을 반복적으로 확인 -> 입력된 값이 숫자형식인지 확인하는 반복문
+			// 문자열 length 속성 : 문자의 개수를 저장하고 있는 속성
+			// '0'~'9' : ascii 48~57
+			// 'a'~'z' : ascii 97~122
+			// 'A'~'Z' : ascii 65~90
+			// 입력받은 문자를 한개씩 검사하다가 문자가 수치형이 아니면 반복을 종료
+			for (var i = 0; i < num.length; i++){
+				if (!(num.charAt(i) >= '0' && num.charAt(i) <= '9')){
+					alert("숫자 형식이 아닙니다");
+					break;
+				}
+				document.write(num.charAt(i)+"<br>");
+			}
+			document.write("<hr>");
+			document.write("입력문자 : " +num+"<br>");
+			
+			// String.charCodeAt(idx) : idx 위치의 문자에 대해서 아스키 코드 값을 반환
+			for (var i = 0; i < num.length; i++){
+				document.write(num.charAt(i)+"문자의 아스키 코드 값은 " + num.charCodeAt(i)+"<br>");
+			}
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

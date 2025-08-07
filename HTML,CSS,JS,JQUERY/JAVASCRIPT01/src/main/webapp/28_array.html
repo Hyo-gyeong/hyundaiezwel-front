@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <title>배열 사용</title>
+        <script type="text/javascript">		
+      		//1. 크기가 5인 배열 생성
+			var num = new Array(5);
+      		
+			//2. 크기가 정해지지 않은 배열 객체 변수 player 선언 - 생성자 함수 활용
+			var player = new Array();
+			
+			//3. 배열 선언과 동시에 값 초기화 - 생성자 함수 활용 선언/생성/초기화 -> 배열 크기는 전달된 값의 개수에 의해 결정			
+			var fish = new Array("고등어", "갈치", "명태", "대구");
+			var score = [85,12,54,231];
+			//4. 각 원소의 데이터 타입이 다른 경우 - []활용 선언/생성/초기화 -> 배열 크기는 전달된 값의 개수에 의해 결정
+			var student = ["홍길동", 2, 93.54, 'A'];
+			
+			//5. 배열의 모든 원소에 값을 저장할 때는 
+			//for 문 사용이 더 효율적 - num 배열 객체 변수에 값 저장
+			for (var i = 0; i < num.length; i++){
+				num[i] = i; //배열 각 원소에 i값 저장
+			}
+			// * num = [0,1,2,3,4]; 이렇게 하면 num이라는 배열을 새로 만들어버림. 앞서 선언한 배열에 값을 넣는 것이 아님
+			// num[0]=0;num[1]=1;이런식으로 해도 됨..
+
+			//6. 배열 모든 원소의 값 출력 - for 문 사용이 효율적
+			document.write("num : ");
+			for(var i=0; i<num.length; i++) 
+				document.write(num[i] + " ");				
+			
+			document.write("<br>player : ");
+		    for(var i=0; i<player.length; i++) 
+				document.write(player[i] + " ");
+			
+			document.write("<br>fish : ");
+			for(var i=0; i<fish.length; i++) 
+				document.write(fish[i] + " ");
+			
+			document.write("<br>score : ");
+			for(var i=0; i<score.length; i++) 
+				document.write(score[i] + " ");	
+				
+/* 			document.write("<br>student : ");
+			for(var i=0; i<student.length; i++) 
+				document.write(student[i] + " ");	 */	
+				
+				document.write("<br>student : ");
+				for(var i in student) 
+					document.write(student[i] + " ");	
+        </script>
+    </head>
+    <body>   	  
+    </body>
+</html>

@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지맵</title>
+    <style>
+    	div {
+    		margin: 0 auto; 
+    		width:1200px;
+    		text-align:center;
+    	}
+    </style>
+</head>
+<body>
+	<div> <!-- 이미지에 스타일을 지정하는 것보다 div에 스타일을 적용하는게 더 효율적임 -->
+		<img src="image/메인.png" border="1" usemap="#cityMap"> <!-- map이름 지정 -->
+		<map name="cityMap">
+			<area shape="rect" coords="60,90,250,150" href="뉴욕.html">
+			<area shape="rect" coords="310,90,500,150" href="파리.html">
+			<area shape="rect" coords="560,90,750,150" href="로마.html">
+			<area shape="rect" coords="810,90,1000,150" href="베이징.html">			
+		</map>
+	</div>
+</body>
+</html>
+
+
+

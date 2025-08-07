@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>addEventListener() : 동일 이벤트 여러 번 적용 가능</title>
+		<script type="text/javascript">
+			window.onload = function() {
+				var btn = document.getElementById("btn");
+				
+				// 한개의 버튼에 click 이벤트가 발생하면 두개의 함수가 순서대로 실행
+				btn.addEventListener("click", show1);
+				btn.addEventListener("click", show2);
+				// 이벤트 리스너를 추가하는 것이 아래와 같은 방식으로 이벤트를 대입연산자로 등록하는 고전방식보다 효율적이고 여러 리스너를 동시에 등록할 수 있음
+				/*
+				var btn = document.getElementById("myButton");
+
+				btn.onclick = function() {
+				    alert("버튼이 클릭되었습니다!");
+				};
+				*/
+			};
+			
+			function show1() {
+				alert("실행1");
+			}
+			
+			function show2() {
+				alert("실행2");
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<button id="btn">클릭</button>
+	</body>
+</html>

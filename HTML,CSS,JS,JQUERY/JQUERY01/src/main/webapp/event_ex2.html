@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			div {
+				width:100px;
+				height:50px;
+				line-height:50px;
+				text-align:center;
+				color:white;
+				background-color:yellow;
+				border-radius:20px; 
+			} 
+		</style>
+		<script src="jquery-3.7.1.min.js"></script>
+		<script type="text/javascript">	
+		/*
+			$(document).ready(function(){
+				var cnt = 0;
+				$('div').on('click', function(){
+					if (cnt % 3 == 0){
+						$(this).css('background-color','red');
+						cnt++;
+					}
+					else if (cnt % 3 == 1){
+						$(this).css('background-color','green');
+						cnt++;
+					}
+					else{
+						$(this).css('background-color','blue');
+						cnt++;
+					}
+				});
+			});
+		*/
+		/*
+		$(document).ready(function(){
+			var colors = ["red", "green","blue"];
+			var currentColor = 0;
+			
+			$('div')
+				.css({
+					backgroundColor : colors[currentColor]
+				})
+				.on('click', function(){
+					currentColor = (currentColor+1)%colors.length;
+					$(this).css('background',colors[currentColor]);
+				})
+		});
+		*/
+		$(document).ready(function(){
+			$('div')
+				.css({
+					backgroundColor : 'red'
+				})
+				.on('click', function(){
+					var currentColor = $(this).css('background-color');
+					// 위의 코드에서 넘어오는 변수 타입이랑 내용을 보고 이에 맞춰서 if문 조건을 작성해야함
+					//console.log(currentColor); // string
+					//console.log(this); // rgb(~)
+					if (currentColor == 'rgb(255,0,0)'){
+						$(this).css('background','green');
+					} else if (currentColor == 'rgb(0,128,0)'){
+						$(this).css('background','blue');
+					} else {
+						$(this).css('background','red');
+					}
+				});
+		});
+		</script>			
+	</head>
+	<body>
+		<div>클릭</div>
+	</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Date 객체</title>
+		<script type="text/javascript">
+			// Date 객체 참조 변수 today를 생성
+			var today = new Date();
+			var today2 = new Date();
+			
+			// today 활용해서 Date 객체의 기능 사용
+			// var year = today.getYear(); // 년도 반환 메소드, 1900년을 기준으로 몇 년이 지났는지 반환함
+			var year = today.getFullYear(); // 현재 연도 반환
+			
+			var month = today.getMonth()+1; // 월을 반환하는 메소드(0~11)
+			var date = today.getDate(); // 일 반환 메소드
+			
+			var day; //  요일 저장할 변수
+			
+			// 요일 설정 -> 0(일)~6(토)까지 요일을 반환하는 메소드 getDay()
+			switch( today.getDay() ){
+			case 0: day= "일"; break;
+			case 1: day= "월"; break;
+			case 2: day= "화"; break;
+			case 3: day= "수"; break;
+			case 4: day= "목"; break;
+			case 5: day= "금"; break;
+			default: day = "토";
+			}
+			
+			document.write("오늘은 " + year + "년 " + month + "월 " +
+													    date + "일 " + day + "요일입니다.");
+			
+
+			var hours = today.getHours(); // 현재 시 반환하는 메소드
+			var minutes = today.getMinutes(); //현재 분 반환 메소드
+			var seconds = today.getSeconds(); // 현재 초 반환 메소드
+			var amPm; // 오전 오후 저장할 변수
+			
+			if (hours < 12){
+				amPm = "오전";
+			}
+			else{
+				amPm = "오후";
+				if (hours > 12){
+					hours -= 12;
+				}
+			}
+			document.write("<br>지금은 " + amPm + hours + "시 " + minutes + "분 " +
+					seconds + "초 입니다.");
+			
+			document.write("<br>getTime() : " + today.getTime());
+			document.write("<br>toLocaleString() : " + today.toLocaleString()); // 현주소 서울 기준
+			document.write("<br>toGMTString() : " + today.toGMTString());
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

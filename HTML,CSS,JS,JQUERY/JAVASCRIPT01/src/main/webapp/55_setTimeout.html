@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+         <title>setTimeout() 예제</title>
+		<script type="text/javascript">
+			function openInfo(){
+				// 나중에 만든 자식창에 포커스가 감
+				win = window.open("msgWindow.html", "setTimeout", "width=300, height=200");
+			}
+			
+			
+			function showMsg(){
+				document.write("로드하자마자 열린 공지사항 창이 <br> 3초후에 자동으로 닫혔습니다.");
+			}
+		</script>
+	</head>		
+	<!-- 
+	1. 부모창 load : 이 시점에 focus가 들어오지 않음
+	2. 자식창 open
+	3. 자식창 focus -> 부모창 focus가 없음
+	4. 자식창 close
+	5. 부모창 focus
+	 -->
+	<body onLoad="openInfo()" onFocus> <!-- 부모창의 document가 다 올리오는 시점 -->
+										<!--  onFocus = 활성화가 되면 => 자식창이 close되면 활성화가 되어 onFocus이벤트 핸들러가 활성화 됨-->
+		부모창입니다.    	   	
+	</body>
+</html>
+

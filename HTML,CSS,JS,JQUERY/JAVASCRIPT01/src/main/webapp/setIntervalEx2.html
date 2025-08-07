@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>setIntervalEx2.html</title>
+		<style type="text/css">
+			div {
+				margin:0 auto;
+				width:100%;
+				text-align:center;
+			}
+		</style>
+		<script type="text/javascript">	
+			// 카운트 다운 버튼 클릭하면 0.5초 간격으로 이미지 변경
+			// var count = 1;
+			var countNum = 10;
+			
+			function startCount(){
+				timerID = setInterval(showCount, 500);
+				// clear 위치 경우 2
+				// 세번째에 clear할 id받음 (cleatInterval 형태로 사용되어질 때 사용하는 매개변수, 따라서 필수 아님)
+				setTimeout(clearInterval, 5500, timerID);
+			}
+			
+			function showCount(){
+				countH1.innerHTML = countNum;
+				bombImg.src = "image/bomb"+(11-countNum)+".jpg";
+				// el표현식
+				// bombImg.src = `image/bomb${count}.jpg`;
+				
+				// count++;
+				countNum--;
+				console.log(countNum);
+				/* count 변수 사용하는 경우
+				if (count == 12){
+					clearInterval(timerID);
+					count = 1;
+					countNum = 10;
+				}
+				*/
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<h1 id="countH1">10</h1>
+			<img id="bombImg" src="image/bomb1.jpg"><br><br>
+			<button onClick="startCount()">카운트 다운 시작</button>
+		</div>
+	</body>
+</html>

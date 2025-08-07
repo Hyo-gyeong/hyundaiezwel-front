@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>preventDefault()</title>
+		<link rel="icon" type="image/png" href="#" />
+		<script src="jquery-3.7.1.min.js"></script>
+		<script type="text/javascript">
+			// 문서(document)가 준비 완료되면 함수 실행 
+			$(document).ready(function() {
+				$('#link').on('click', function(e){ // 이벤트 정보를 객체로 받음
+					// a 태그가 가진 기본 기능을 없애야 새로운 기능을 정의할 수 있음
+					e.preventDefault(); // 기본 href 동작 정지됨 (사이트 이동 동작 정지)
+					alert("일시적 이동 정지"); // prevent없이 이렇게만 정의하면 원래 동작을 먼저 수행하기 때문에 예상대로 되지 않음
+				});
+				
+				// 문서 상에서 오른쪽 마우스 클릭했을 때 기본으로 출력되는 팝업메뉴 차단 
+				//javascript
+				document.oncontextmenu = function(e){
+					e.preventDefault(); // return false;와 같은 의미
+										// document객체의 기본 동작인 단축메뉴 팝업을 중지
+					alert("오른쪽 마우스 클릭 금지");
+					// return false; // 같은 의미이므로 동일하게 사용 가능
+				}
+				//jquery
+
+			});
+		</script>
+	</head>
+	<body>
+		<!--  <a> 태그는 클릭하면 다른 문서(사이트)로 이동하는 기본 동작이 있음 (href) -->
+		<a href="https:www.naver.com" id="link">네이버로 이동</a>
+	</body>
+</html>

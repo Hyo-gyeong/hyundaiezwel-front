@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <title>if문 연습문제</title>
+        <script type="text/javascript">	
+        	// *포인트* 입력된 모든 값은 문자로 취급!
+			 var num1 = prompt("숫자1 입력");
+			 var num2 = prompt("숫자2 입력");
+			 var num3 = prompt("숫자3 입력");
+			 
+			 //키보드 입력은 문자입력이므로 num1, num2, num3은 문자가 입력되어 있음
+			 // 아래 조건식은 문자를 비교하게 됨
+			 // 문자열간의 비교는 변수별 첫문자를 이용해서 비교하게 됨
+			 //같은 경우는 제외
+			 if (num1 > num2 && num1 > num3) {
+				 max = num1;
+			 }
+			 else if (num2 > num3) {
+				 max = num2;
+			 }
+			 else {
+				 max = num3;
+			 }
+
+			 
+			 document.write("최대값 : " + max);
+			 
+			 //다른 방법
+			 max = num1;
+			 if (num2 > max) {
+				 max = num2;
+			 }
+			 if (num3 > max) {
+				 max = num3;
+			 }
+			 document.write("<br>최대값 : " + max);
+        </script>
+    </head>
+    
+    <body>       
+    </body>
+</html>
+
